@@ -102,7 +102,7 @@
     <fields>
         <fullName>Active123__c</fullName>
         <externalId>false</externalId>
-        <label>Active</label>
+        <label>Active123</label>
         <picklist>
             <picklistValues>
                 <fullName>Sridhar-No</fullName>
