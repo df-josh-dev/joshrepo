@@ -1,0 +1,15 @@
+.THIS .media-object {
+    width: 64px; 
+    height: 64px;
+}
+.THIS .media-left {
+    float: left;
+    padding-right: 10px;
+    cursor: pointer;
+}
+.THIS .media-body {
+    cursor: pointer;
+}
+.THIS h4.media-heading {
+    font-weight: bold;
+}

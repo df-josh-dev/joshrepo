@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute type="sfsiPoll__Poll_Question__c" name="pollQuestion" />
+    <aura:attribute type="string" name="optionsContainer" />
+
+	<li class="media list-group-item" >
+        <div class="media-left" onclick="{!c.showOptions}">
+            <a href="#">
+                <img class="media-object" src="{!v.pollQuestion.sfsiPoll__Image__c}" alt="No Image" />
+            </a>
+        </div>
+        <div class="media-body" onclick="{!c.showOptions}">
+            <h4 class="media-heading">{!v.pollQuestion.Name}</h4>
+        </div>
+        
+        <div style="clear: both;">{!v.optionsContainer}</div>
+	</li>
+</aura:component>

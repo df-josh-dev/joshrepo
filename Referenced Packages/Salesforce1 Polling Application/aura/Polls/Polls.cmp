@@ -1,0 +1,34 @@
+<aura:component controller="sfsiPoll.PollController" implements="flexipage:availableForAllPageTypes">
+    <ltng:require styles="/resource/sfsiPoll__bootstrapNamespaced"/>
+    <aura:attribute name="polls" type="sfsiPoll__Poll_Question__c[]"/>
+    
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <center><ui:spinner aura:id="spinner"></ui:spinner></center>
+    
+    <!-- Iterate over the list of polls and display them -->
+    <div class="bootstrap-sf1">
+        <div class="container" style="width: inherit;">
+            <div class="row">
+            	<div class="col-md-9">
+                    <ul class="media-list list-group">
+                        <aura:iteration var="poll" items="{!v.polls}">
+                            <sfsiPoll:PollQuestion pollQuestion="{!poll}"/>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </div>
+
+            <center>
+                <aura:if isTrue="{!v.polls.length == 0}">
+                    <h5>There are no polls active at this time.</h5>
+                </aura:if>
+                <!--ui:button label="New Poll" press="{!c.navHome}"/-->
+            </center>
+            <br/>
+        </div>
+    </div>	
+    
+</aura:component>

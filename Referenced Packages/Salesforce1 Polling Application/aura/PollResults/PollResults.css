@@ -1,0 +1,18 @@
+.THIS .first-option {
+    background-color: #F6B220;
+}
+.THIS .second-option {
+    background-color: #2A7DE2;
+}
+.THIS .third-option {
+    background-color: #00BD70;
+}
+.THIS .fourth-option {
+    background-color: #665EC7;
+}
+.THIS .fifth-option {
+    background-color: #EA4E3C;
+}
+.THIS table.poll-results tbody tr {
+    border: 1px dotted lightgrey;
+}

@@ -1,0 +1,24 @@
+<aura:component >
+    <aura:attribute type="sfsiPoll__Poll_Option__c[]" name="options" />
+    
+	<center>
+        <table style="width: 80%;" class="poll-results">
+            <tbody>
+                <aura:iteration items="{!v.options}" var="opt">
+                    <tr>
+                        <td style="width: 6%;">{!opt.sfsiPoll__Response_Ratio__c}%</td>
+                        <td style="width: 94%;">
+                            <div style="{!'white-space:nowrap; width:' + opt.sfsiPoll__Response_Ratio__c + '%;'}"
+                                 class="{!opt.sfsiPoll__Order__c == '1' ? 'first-option' : 
+                                        	opt.sfsiPoll__Order__c == '2' ? 'second-option' : 
+                                        		opt.sfsiPoll__Order__c == '3' ? 'third-option' :
+                                        			opt.sfsiPoll__Order__c == '4' ? 'fourth-option' : 'fifth-option'}">
+                                {!opt.Name}
+                            </div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>    
+    </center>
+</aura:component>

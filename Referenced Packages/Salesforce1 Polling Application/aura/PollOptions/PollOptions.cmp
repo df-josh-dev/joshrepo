@@ -1,0 +1,38 @@
+<aura:component controller="sfsiPoll.PollController">
+    <aura:attribute type="sfsiPoll__Poll_Question__c" name="poll" />
+    <aura:attribute type="sfsiPoll__Poll_Option__c[]" name="options" />
+    <aura:attribute type="boolean" name="hasResponded" />
+    <aura:attribute type="string" name="errorMsg" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div style="clear: both; text-align: center">
+        <aura:renderIf isTrue="{!v.hasResponded}">
+            <sfsiPoll:PollResults options="{!v.options}"/>
+        </aura:renderIf> 
+        
+        <aura:renderIf isTrue="{!v.hasResponded == null || v.hasResponded == false}">
+            <aura:renderIf isTrue="{!v.poll.sfsiPoll__Image__c != null}">
+                <br/>
+                <div>
+                    <img class="large-image" 
+                         src="{!v.poll.sfsiPoll__Image__c}"/>    
+                </div>
+            </aura:renderIf>
+            
+            <br/>
+            <div>
+                <aura:iteration items="{!v.options}" var="opt">
+                    <ui:button label="{!opt.Name}" 
+                               press="{!c.optionClick}"></ui:button>
+                </aura:iteration>
+                
+                <aura:renderIf isTrue="{!v.errorMsg != null}">
+                    <br/>
+					<div class="alert alert-danger" role="alert">{!v.errorMsg}</div>                
+                </aura:renderIf>
+            </div>
+        </aura:renderIf> 
+	</div>
+    
+</aura:component>
