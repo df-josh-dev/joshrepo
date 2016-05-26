@@ -1,4 +1,5 @@
-<fields>
+<?xml version="1.0" encoding="UTF-8"?>
+<field xmlns="http://soap.sforce.com/2006/04/metadata">
         <fullName>Accountgithub__c</fullName>
         <externalId>false</externalId>
         <label>AccountGithub</label>
